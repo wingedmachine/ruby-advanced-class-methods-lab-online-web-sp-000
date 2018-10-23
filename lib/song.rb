@@ -38,6 +38,13 @@ class Song
     self.all.sort { |song1, song2| song1.name <=> song2.name }
   end
 
+  def self.new_from_filename(filename)
+    song_data = filename[0,-4].split(" - ")
+    song = self.create_by_name(song_data[1])
+    song.artist_name = song_data[0]
+    song
+  end
+
   def save
     self.class.all << self
   end
