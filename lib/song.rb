@@ -6,6 +6,12 @@ class Song
     @@all
   end
 
+  def self.create(name, artist)
+    @name = name
+    @artist_name = artist
+    self
+  end
+
   def save
     self.class.all << self
   end
