@@ -8,7 +8,7 @@ class Song
 
   def self.create
     new_song = self.new
-    self.all << new_song
+    save
     new_song
   end
 
@@ -51,6 +51,8 @@ class Song
     song.artist_name = song_data[0]
     song
   end
+
+  def
 
   def save
     self.class.all << self
